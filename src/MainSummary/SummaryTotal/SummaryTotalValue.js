@@ -1,7 +1,19 @@
 import React from "react";
 
+const USCurrencyFormat = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 export default class SummaryTotalValue extends React.Component {
   render() {
-    return <em>SummaryTotalValue</em>;
+    const total = Object.keys(this.state.selected).reduce(
+      (acc, curr) => acc + this.state.selected[curr].cost,
+      0
+    );
+    return (
+      <div className="summary__total__value">
+        {USCurrencyFormat.format(total)}
+      </div>
+    );
   }
 }

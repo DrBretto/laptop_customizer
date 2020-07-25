@@ -5,9 +5,10 @@ import FeatureName from "./FeatureName";
 export default class Feature extends React.Component {
   render() {
     return (
-      <fieldset className="feature">
+      <fieldset className="feature" key={featureHash}>
         <FeatureItem />
         <FeatureName />
+        {options}
       </fieldset>
     );
   }

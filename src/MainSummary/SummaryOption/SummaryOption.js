@@ -6,11 +6,11 @@ import SummaryOptionLabel from "./SummaryOptionLabel";
 export default class SummaryOption extends React.Component {
   render() {
     return (
-      <li>
+      <div className="summary__option">
         <SummaryOptionLabel />
         <SummaryOptionValue />
         <SummaryOptionCost />
-      </li>
+      </div>
     );
   }
 }

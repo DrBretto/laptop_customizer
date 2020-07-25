@@ -2,6 +2,6 @@ import React from "react";
 
 export default class SummaryOptionLabel extends React.Component {
   render() {
-    return <label>SummaryOptionLabel</label>;
+    return <div className="summary__option__label">Processor </div>;
   }
 }

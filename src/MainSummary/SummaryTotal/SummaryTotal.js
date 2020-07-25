@@ -5,10 +5,10 @@ import SummaryTotalValue from "./SummaryTotalValue";
 export default class SummaryTotal extends React.Component {
   render() {
     return (
-      <li>
+      <div className="summary__total">
         <SummaryTotalLabel />
         <SummaryTotalValue />
-      </li>
+      </div>
     );
   }
 }

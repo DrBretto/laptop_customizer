@@ -1,22 +1,31 @@
 import React from "react";
+import slugify from "slugify";
+
+const USCurrencyFormat = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 
 export default class FeatureItem extends React.Component {
   render() {
     return (
-      <div className="feature__item">
+      <div key={this.props.itemHash} className="feature__item">
         <input
           type="radio"
-          id='"name":"17th-Generation-Intel-Core-HB-(7-Core-with-donut-spare)""cost":700'
+          id={this.props.itemHash}
           className="feature__option"
-          name="Processor"
-          // ! checked=""
-          defaultChecked
+          name={slugify(this.props.feature)}
+          checked={
+            this.props.item.name ===
+            this.state.selected[this.props.feature].name
+          }
+          onChange={(e) =>
+            this.updateFeature(this.props.feature, this.props.item)
+          }
         />
-        <label
-          htmlFor='"name":"17th-Generation-Intel-Core-HB-(7-Core-with-donut-spare)""cost":700'
-          className="feature__label"
-        >
-          17th Generation Intel Core HB (7 Core with donut spare) ($700.00)
+        <label htmlFor={this.props.itemHash} className="feature__label">
+          {this.props.item.name} (
+          {USCurrencyFormat.format(this.props.item.cost)})
         </label>
       </div>
     );

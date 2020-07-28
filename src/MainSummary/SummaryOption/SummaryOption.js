@@ -8,16 +8,17 @@ export default class SummaryOption extends React.Component {
     return Object.keys(this.props.selected).map((key) => {
       return (
         <div className="summary__option" key={key}>
-          <div className="summary__option__label">{key}</div>
-          <div className="summary__option__value">
-            {this.props.selected[key].name}
-          </div>
-          <div className="summary__option__cost">
-            {new Intl.NumberFormat("en-US", {
+          <SummaryOptionLabel key={key} feature={this.props.feature} />
+          <SummaryOptionValue
+            key={key}
+            feature={this.props.selected[key].name}
+          />
+          <SummaryOptionCost
+            cost={new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
             }).format(this.props.selected[key].cost)}
-          </div>
+          />
         </div>
       );
     });

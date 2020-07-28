@@ -1,7 +1,6 @@
 import React from "react";
 import MainSummary from "./MainSummary/MainSummary";
 import MainForm from "./MainForm/MainForm";
-import slugify from "slugify";
 
 import "./App.css";
 

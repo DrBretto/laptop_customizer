@@ -8,9 +8,9 @@ export default class SummaryOption extends React.Component {
     return Object.keys(this.props.selected).map((key) => {
       return (
         <div className="summary__option" key={key}>
-          <SummaryOptionLabel key={key} feature={this.props.feature} />
+          <SummaryOptionLabel feature={key} />
           <SummaryOptionValue
-            key={key}
+            key={this.props.selected[key].name}
             feature={this.props.selected[key].name}
           />
           <SummaryOptionCost

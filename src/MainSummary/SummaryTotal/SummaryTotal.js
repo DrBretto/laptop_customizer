@@ -8,10 +8,11 @@ export default class SummaryTotal extends React.Component {
       (acc, curr) => acc + this.props.selected[curr].cost,
       0
     );
+    console.log("total: ", total);
     return (
       <div className="summary__total">
-        <SummaryTotalLabel {...total} />
-        <SummaryTotalValue {...total} />
+        <SummaryTotalLabel />
+        <SummaryTotalValue total={total} />
       </div>
     );
   }

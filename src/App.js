@@ -30,6 +30,7 @@ export default class App extends React.Component {
   }
 
   updateFeature = (feature, newValue) => {
+    console.log("something clicked");
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({

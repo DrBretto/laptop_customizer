@@ -3,7 +3,6 @@ import Feature from "./Feature/Feature";
 
 export default class MainForm extends React.Component {
   render() {
-    console.log(this.props);
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       return (

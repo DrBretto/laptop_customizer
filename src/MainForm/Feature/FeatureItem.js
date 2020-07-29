@@ -9,18 +9,11 @@ const USCurrencyFormat = new Intl.NumberFormat("en-US", {
 export default class FeatureItem extends React.Component {
   render() {
     const itemHash = slugify(JSON.stringify(this.props.item.name));
-    console.log("aaa", this.props.item);
-    console.log("bbb", this.props.featureName);
-    console.log("ccc", this.props.selected[this.props.featureName].name);
-    console.log("ddd", this.props.item.name);
-    console.log(
-      "eee",
-      this.props.item.name === this.props.selected[this.props.featureName].name
-    );
-
+    console.log("itemhash", itemHash);
     return (
-      <div key={this.props.itemHash} className="feature__item">
+      <div className="feature__item">
         <input
+          id={itemHash}
           type="radio"
           key={itemHash}
           className="feature__option"
@@ -29,11 +22,12 @@ export default class FeatureItem extends React.Component {
             this.props.item.name ===
             this.props.selected[this.props.featureName].name
           }
-          onChange={(e) =>
-            this.props.updateFeature(this.props.featureName, this.props.item)
-          }
+          onChange={(e) => {
+            console.log("clicky");
+            this.props.onChange(this.props.featureName, this.props.item);
+          }}
         />
-        <label htmlFor={this.props.itemHash} className="feature__label">
+        <label htmlFor={itemHash} className="feature__label">
           {this.props.item.name} (
           {USCurrencyFormat.format(this.props.item.cost)})
         </label>

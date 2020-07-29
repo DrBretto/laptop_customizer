@@ -5,7 +5,8 @@ import FeatureName from "./FeatureName";
 export default class Feature extends React.Component {
   render() {
     const options = this.props.options.map((item, index) => {
-      const featureHash = `${this.props.featureName}-${index}`;
+      const featureHash = `${this.props.name}-${index}`;
+      console.log("hash", this.props.name, index);
       const selectedClass =
         item.name === this.props.selected[this.props.name].name
           ? "feature_selected"

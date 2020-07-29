@@ -1,6 +1,8 @@
 import React from "react";
 import MainSummary from "./MainSummary/MainSummary";
 import MainForm from "./MainForm/MainForm";
+import Header from "./Header";
+
 import FEATURES from "./FEATURES";
 
 import "./App.css";
@@ -42,9 +44,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
+        <Header />
         <main>
           <MainForm
             features={FEATURES}

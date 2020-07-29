@@ -1,6 +1,7 @@
 import React from "react";
 import MainSummary from "./MainSummary/MainSummary";
 import MainForm from "./MainForm/MainForm";
+import FEATURES from "./FEATURES";
 
 import "./App.css";
 
@@ -46,7 +47,7 @@ export default class App extends React.Component {
         </header>
         <main>
           <MainForm
-            features={this.props.features}
+            features={FEATURES}
             selected={this.state.selected}
             onChange={this.updateFeature}
           />
